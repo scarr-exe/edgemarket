@@ -1,101 +1,90 @@
 # EdgeMarket
 
-EdgeMarket is an autonomous prediction market intelligence agent designed to identify mispriced probabilities across Polymarket and similar prediction markets.
+**Autonomous prediction market intelligence agent.**
 
-Instead of summarizing headlines, EdgeMarket independently estimates real-world probabilities, compares them against market odds, and surfaces actionable trading edges with structured reasoning, confidence scoring, and risk analysis.
+EdgeMarket analyzes any Polymarket question, forms an independent probability estimate using evidence-based reasoning, then compares it against current market odds to surface actionable edges.
 
-## Focus Areas
+It is not a news summarizer. It is an edge finder.
 
-- Crypto and DeFi markets
-- Politics and elections
-- Macroeconomics
-- Sports
-- Geopolitics
-- Science and technology prediction markets
+---
 
-## How It Works
+## What It Does
 
-1. Maps the event context and base rates
-2. Evaluates relevant evidence and catalysts
-3. Forms an independent probability estimate
-4. Calculates market edge vs implied odds
-5. Returns a structured trading signal
+Give it a market question and the current odds. It returns:
 
-The system is designed to reduce:
+- An independent probability estimate derived from base rates and evidence
+- A step-by-step probability derivation showing every adjustment
+- Edge calculation (your estimate minus market odds), adjusted for fees
+- Signal classification: NO SIGNAL / WEAK / MODERATE / STRONG / CRITICAL
+- Position recommendation with bankroll sizing guidance
+- Risk flags, correlated markets, and upcoming catalysts
 
-- Headline anchoring
-- Recency bias
-- Emotional narrative trading
-- Overconfidence
+It covers all Polymarket categories — crypto, politics, macroeconomics, sports, geopolitics, and any other binary or categorical outcome.
 
-## Usage
+---
 
-1. Open your preferred LLM:
-   - ChatGPT
-   - Claude
-   - Gemini
-   - DeepSeek
-   - Grok
-   - Any compatible model
-2. Paste the contents of prompt.md into the system prompt or custom instructions section.
-3. Provide a prediction market question and current odds.
+## How To Use It
 
-## Example Input
+1. Copy the full system prompt from [prompt.md](./prompt.md)
+2. Paste it into any capable LLM (GPT-4o, Claude, Gemini, etc.)
+3. Input a market in this format:
 
-```text
-Will Bitcoin exceed $150k before January 1, 2027? - 38%
-
-Recent ETF inflows have accelerated and the Fed is expected to begin easing later this year.
 ```
+[Market question] — [current odds]%
+```
+
+**Example input:**
+```
+Will the Fed cut rates at the September 2025 FOMC meeting? — 34%
+```
+
+**With additional context:**
+```
+Will Bitcoin exceed $100k before December 31 2025? — 62%
+Context: Recent CPI came in above expectations at 3.4%.
+```
+
+**Batch mode:**
+```
+Analyze these three markets:
+1. Will Ethereum ETF net inflows exceed $1B in July 2025? — 41%
+2. Will the ECB cut rates in October 2025? — 58%
+3. Will Arsenal win the Premier League 2025/26? — 22%
+```
+
+---
+
+## Why It Works
+
+Most LLMs default to summarizing headlines and echoing market consensus. EdgeMarket is built to fight that.
+
+The prompt forces:
+
+- Independent estimation before comparing to market odds
+- Bayesian-style evidence updates with explicit probability adjustments
+- Mandatory regression toward base rates when evidence is thin
+- Uncertainty bands instead of false point precision
+- Position sizing guidance tied to signal strength and confidence
+- Fee-adjusted edge calculation
+
+The result is analysis that resembles a quantitative research desk rather than a chatbot.
+
+---
 
 ## Example Output
 
-```text
-----------------------------
-EDGEMARKET ANALYSIS
-----------------------------
+See [examples/example_1.md](./examples/example_1.md) for a full sample analysis.
 
-MARKET: Will Bitcoin exceed $150k before January 1, 2027?
-CATEGORY: Crypto price event
-MARKET ODDS: 38%
-YOUR ESTIMATE: 52%
-EDGE: +14%
-SIGNAL: MODERATE SIGNAL
-POSITION: YES
-CONFIDENCE: MEDIUM
-
-----------------------------
-EDGE SUMMARY
-----------------------------
-
-Market prices this at 38% while historical crypto cycle behavior, ETF demand acceleration, and macro liquidity conditions support a probability closer to 52%, creating a meaningful positive edge on YES.
-```
-
-## Why EdgeMarket?
-
-Prediction markets are often efficient, but not perfectly efficient.
-
-EdgeMarket is designed to exploit inefficiencies caused by:
-
-- Retail sentiment swings
-- Liquidity distortions
-- Narrative-driven pricing
-- Statistical neglect
-- Market overreaction to short-term news
-
-The goal is not prediction for entertainment.
-
-The goal is disciplined edge discovery.
+---
 
 ## Marketplace
 
-Swarms Marketplace Listing: TBD
+EdgeMarket is available as a tokenized prompt product on the Swarms Marketplace.
 
-## Socials
+[View on Swarms →](https://swarms.world)
 
-Twitter / X:
-https://x.com/scarrxt/
+---
 
-## License
+## Author
 
-MIT
+Built by [@scarrxt](https://x.com/scarrxt)
