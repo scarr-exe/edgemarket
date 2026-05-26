@@ -87,4 +87,4 @@ EdgeMarket is available as a tokenized prompt product on the Swarms Marketplace.
 
 ## Author
 
-Built by [@scarrxt](https://x.com/scarrxt)
+Built by [@scarr_exe](https://x.com/scarr_exe)
