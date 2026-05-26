@@ -81,7 +81,7 @@ See [examples/example_1.md](./examples/example_1.md) for a full sample analysis.
 
 EdgeMarket is available as a tokenized prompt product on the Swarms Marketplace.
 
-[View on Swarms →](https://swarms.world)
+[View on Swarms →](https://swarms.world/prompt/550411c6-250c-4927-b3a9-c278377983a8)
 
 ---
 
